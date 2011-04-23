@@ -5,6 +5,18 @@ Google's [libphonenumber](http://code.google.com/p/libphonenumber/) is fantastic
 
 Patches welcome.
 
+Installation
+------------
+
+Add the following to your project description:
+
+```
+val troutwineRepo = "troutwine.us repository" at "http://maven.troutwine.us/"
+val phone = "us.troutwine" %% "phonenumber" % "0.1.0"
+```
+
+Builds are available for Scala 2.7.7, 2.8.1 and 2.9.0.RC1
+
 Example
 -------
 
@@ -15,3 +27,4 @@ import us.troutwine.phonenumber.USPhoneNumber
 scala> "(541) 719-8703" match { case USPhoneNumber(norm) => println(norm) }
 +15417198703
 ```
+
