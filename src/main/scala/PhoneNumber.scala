@@ -3,15 +3,23 @@ package us.troutwine.phonenumber
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat
 
-object USPhoneNumber {
-  protected val phoneUtil:PhoneNumberUtil = PhoneNumberUtil.getInstance()
+class USPhoneNumber(number:String) {
+  private val phoneUtil:PhoneNumberUtil = PhoneNumberUtil.getInstance()
+  private val proto = phoneUtil.parse(number, "US")
+  require( phoneUtil.isValidNumber(proto) )
 
-  def unapply(number:String): Option[String] = {
-    try {
-      val smsIdProto = phoneUtil.parse(number, "US")
-      Some(phoneUtil.format(smsIdProto, PhoneNumberFormat.E164))
-    } catch {
-      case npe:com.google.i18n.phonenumbers.NumberParseException => None
-    }
+  implicit def phoneToString(num:USPhoneNumber):String = {
+    phoneUtil.format(proto, PhoneNumberFormat.E164)
   }
+
+  override def equals(other:Any) = other match {
+    case that:USPhoneNumber =>
+      (this:String) equals (that:String)
+    case that:String =>
+      (this:String) equals ((new USPhoneNumber(that)):String)
+    case _ => false
+  }
+
+  override def hashCode = (this:String).hashCode
 }
+
