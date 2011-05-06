@@ -12,6 +12,10 @@ class USPhoneNumber(number:String) {
     phoneUtil.format(proto, PhoneNumberFormat.E164)
   }
 
+  override def toString = {
+    phoneUtil.format(proto, PhoneNumberFormat.E164)
+  }
+
   override def equals(other:Any) = other match {
     case that:USPhoneNumber =>
       (this:String) equals (that:String)
