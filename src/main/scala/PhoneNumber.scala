@@ -9,7 +9,7 @@ class USPhoneNumber(number:String) {
   require( phoneUtil.isValidNumber(proto) )
 
   implicit def phoneToString(num:USPhoneNumber):String = {
-    phoneUtil.format(proto, PhoneNumberFormat.E164)
+    phoneUtil.format(num.proto, PhoneNumberFormat.E164)
   }
 
   override def toString = {
