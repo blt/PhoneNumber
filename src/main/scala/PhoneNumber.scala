@@ -16,13 +16,16 @@ class USPhoneNumber(number:String) {
     phoneUtil.format(proto, PhoneNumberFormat.E164)
   }
 
-  override def equals(other:Any) = other match {
+  override def equals(other:Any):Boolean = other match {
     case that:USPhoneNumber =>
-      (this:String) equals (that:String)
+      (that canEqual this) &&
+      ((this:String) equalsIgnoreCase (that:String))
     case that:String =>
-      (this:String) equals ((new USPhoneNumber(that)):String)
-    case _ => false
+      (this:String) equalsIgnoreCase ((new USPhoneNumber(that)):String)
+    case _ =>
+      false
   }
+  def canEqual(other: Any):Boolean = other.isInstanceOf[USPhoneNumber]
 
   override def hashCode = (this:String).hashCode
 }
