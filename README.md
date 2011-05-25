@@ -12,10 +12,10 @@ Add the following to your project description:
 
 ```
 val troutwineRepo = "troutwine.us repository" at "http://maven.troutwine.us/"
-val phone = "us.troutwine" %% "phonenumber" % "0.1.0"
+val phone = "us.troutwine" %% "phonenumber" % "0.2.4"
 ```
 
-Builds are available for Scala 2.7.7, 2.8.1 and 2.9.0.RC1
+Builds are available for Scala 2.9.0
 
 Example
 -------
