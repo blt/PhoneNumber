@@ -1,8 +1,8 @@
 import sbt._
 
 class PhoneNumberProject(info: ProjectInfo) extends DefaultProject(info) {
-  val libPhone  = "com.googlecode.libphonenumber" % "libphonenumber" % "3.2"
-  val scalaTest = "org.scalatest" % "scalatest" % "1.4.RC2"
+  val libPhone  = "com.googlecode.libphonenumber" % "libphonenumber" % "3.5"
+  val scalaTest = "org.scalatest" %% "scalatest" % "1.4.1"
 
   val scalaToolsSnapshots = "Scala-Tools Maven2 Snapshots Repository" at "http://scala-tools.org/repo-snapshots"
 

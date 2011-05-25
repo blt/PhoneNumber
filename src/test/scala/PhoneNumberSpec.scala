@@ -24,5 +24,11 @@ class PhoneNumberSpec extends Spec with ShouldMatchers {
       assert( !(num0 == num1) )
     }
 
+    it("should be able to handle itself") {
+      val num0 = new USPhoneNumber("5859537915")
+      val nums:String = num0
+      val num1 = new USPhoneNumber(nums)
+      assert( num0 == num1 )
+    }
   }
 }
