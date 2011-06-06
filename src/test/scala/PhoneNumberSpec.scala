@@ -37,5 +37,11 @@ class PhoneNumberSpec extends Spec with ShouldMatchers {
       val num1 = new USPhoneNumber(nums)
       assert( num0 == num1 )
     }
+
+    it("should have implicit string to phonenumber") {
+      val num:String = "5859537915"
+      def printNumber(n:USPhoneNumber) = println("Phone number: %s".format(n))
+      printNumber(num)
+    }
   }
 }

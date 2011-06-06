@@ -8,6 +8,7 @@ object USPhoneNumber {
 
   implicit def phoneToString(num:USPhoneNumber):String =
     phoneUtil.format(num.proto, PhoneNumberFormat.E164)
+  implicit def stringToPhone(num:String):USPhoneNumber = new USPhoneNumber(num)
 }
 
 class USPhoneNumber(number:String) {
