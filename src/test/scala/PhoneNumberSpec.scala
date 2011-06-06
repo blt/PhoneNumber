@@ -42,6 +42,7 @@ class PhoneNumberSpec extends Spec with ShouldMatchers {
       val num:String = "5859537915"
       def printNumber(n:USPhoneNumber) = println("Phone number: %s".format(n))
       printNumber(num)
+      (num:USPhoneNumber)
     }
   }
 }
