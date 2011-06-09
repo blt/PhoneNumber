@@ -3,9 +3,10 @@ package us.troutwine.phonenumber
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat
 
-object USPhoneNumber {
+object USPhoneNumber extends Ordering[USPhoneNumber] {
   val phoneUtil:PhoneNumberUtil = PhoneNumberUtil.getInstance()
 
+  def compare(o1: USPhoneNumber, o2: USPhoneNumber) = (o1:String) compare (o2:String)
   implicit def phoneToString(num:USPhoneNumber):String =
     phoneUtil.format(num.proto, PhoneNumberFormat.E164)
   implicit def stringToPhone(num:String):USPhoneNumber = new USPhoneNumber(num)

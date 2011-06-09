@@ -44,5 +44,13 @@ class PhoneNumberSpec extends Spec with ShouldMatchers {
       printNumber(num)
       (num:USPhoneNumber)
     }
+
+    it("should define an ordering") {
+      val num0 = new USPhoneNumber("5859537915")
+      val num1 = new USPhoneNumber("5859537916")
+      assert( num0 < num1 )
+    }
+
+
   }
 }
