@@ -12,7 +12,7 @@ Add the following to your project description:
 
 ```
 val troutwineRepo = "troutwine.us repository" at "http://maven.troutwine.us/"
-val phone = "us.troutwine" %% "phonenumber" % "0.2.4"
+val phone = "us.troutwine" %% "phonenumber" % "0.2.7"
 ```
 
 Builds are available for Scala 2.9.0
@@ -28,3 +28,8 @@ scala> "(541) 719-8703" match { case USPhoneNumber(norm) => println(norm) }
 +15417198703
 ```
 
+Acknowledgments
+===============
+
+This project has been an outgrowth of my work with the kind folks at
+[FluentStream Technologies](http://www.fluentstream.com/).
