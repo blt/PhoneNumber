@@ -10,6 +10,7 @@ class PhoneNumberSpec extends Spec with ShouldMatchers {
     it("should extract a valid number") {
       val num0 = new USPhoneNumber("(541) 719-8703")
       num0 should be === new USPhoneNumber("+15417198703")
+      "+15417198703" should be === (num0:String)
     }
 
     it("should fail on invalid numbers") {

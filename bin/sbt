@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -server -XX:MaxPermSize=256m -Xmx1G -Xss2M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xincgc -jar `dirname $0`/sbt-launch.jar "$@"
